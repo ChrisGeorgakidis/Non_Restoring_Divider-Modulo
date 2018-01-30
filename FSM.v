@@ -1,9 +1,9 @@
-module FSM (clk, reset, valid_in, mode, busy, valid_out, result);
+module FSM (clk, reset, valid_in, mode, divisor, dividend, busy, valid_out, result);
 input wire clk, reset;
 input wire valid_in, mode;
 input wire [15:0]divisor;
 input wire [31:0]dividend;
-output reg result_select, busy, valid_out;
+output reg busy, valid_out;
 output wire [31:0]result;
 
 parameter IDLE		= 3'd0;
@@ -13,11 +13,11 @@ parameter ADD_SUB	= 3'd3;
 parameter LSB		= 3'd4;
 parameter RESULT	= 3'd5;
 
-wire state;
-reg nxt_state;
+wire [2:0]state;
+reg [2:0]nxt_state;
 
-wire n;
-reg numOfBits;
+wire [5:0]n;
+reg [5:0]numOfBits;
 
 reg [15:0]M;	//divider
 reg [31:0]Q;	//quotient
@@ -28,7 +28,7 @@ assign n = numOfBits;
 assign state = nxt_state;
 
 always @ (posedge clk or posedge reset) begin
-	if (reset == 1'b0) begin
+	if (reset == 1'b1) begin
 		nxt_state <= IDLE;
 	end
 	else begin
@@ -62,7 +62,9 @@ always @ (posedge clk or posedge reset) begin
 			nxt_state <= DATA;
 		end
 		default: begin
+			nxt_state <= IDLE;
 		end
+		endcase
 	end
 end
 
@@ -86,6 +88,7 @@ always @ (posedge clk or posedge reset) begin
 			M			<= 32'b0;
 		end
 		DATA: begin
+			numOfBits	<= 6'd32;
 			if (valid_in == 1'b1) begin
 				busy <= 1'b1;
 			end
@@ -102,8 +105,8 @@ always @ (posedge clk or posedge reset) begin
 			numOfBits	<= n;
 			busy		<= 1'b1;
 			valid_out	<= 1'b0;
-			A			<= {A[31:1], Q[15]};
-			Q			<= {Q[15:1], 0};
+			A			<= {A[30:0], Q[15]};
+			Q			<= {Q[14:0], 1'b0};
 		end
 		ADD_SUB: begin
 			numOfBits	<= n;
@@ -117,7 +120,7 @@ always @ (posedge clk or posedge reset) begin
 			end
 		end
 		LSB: begin
-			numOfBits	<= n - 1;
+			numOfBits	<= n - 6'd1;
 			busy		<= 1'b0;
 			valid_out	<= 1'b0;
 			Q		<= {Q[15:1], ~A[31]};
@@ -138,6 +141,7 @@ always @ (posedge clk or posedge reset) begin
 			Q			<= 32'b0;
 			M			<= 32'b0;
 		end
+		endcase
 	end
 end
 
