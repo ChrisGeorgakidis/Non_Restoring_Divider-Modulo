@@ -5,6 +5,8 @@ input wire [15:0]divisor;
 output reg valid_out;
 output wire [31:0]result;
 
+reg [0:0]v_out[3:0];
+
 wire [15:0]temp_remainder[11:0];
 
 wire [15:0]reg_remainder_w[3:0];
@@ -16,7 +18,7 @@ reg  [16:0]quotient_out;
 wire [15:0]remainder_w;
 reg  [15:0]remainder;
 
-assign result = (mode) ? quotient_out : remainder;
+assign result = (mode == 0) ? quotient_out : remainder;
 
 Divider_row Divider_row_16 (
 	.divisor	(divisor),
@@ -28,24 +30,24 @@ Divider_row Divider_row_16 (
 
 Divider_row Divider_row_15 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[2][14:0], dividend[15]}),
-	.quotient	(~temp_remainder[2][15]),
+	.dividend	({temp_remainder[11][14:0], dividend[15]}),
+	.quotient	(~temp_remainder[11][15]),
 	.q_out		(quotient_out_w[15]),
 	.remainder	(temp_remainder[10])
 );
 
 Divider_row Divider_row_14 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[1][14:0], dividend[14]}),
-	.quotient	(~temp_remainder[1][15]),
+	.dividend	({temp_remainder[10][14:0], dividend[14]}),
+	.quotient	(~temp_remainder[10][15]),
 	.q_out		(quotient_out_w[14]),
 	.remainder	(temp_remainder[9])
 );
 
 Divider_row Divider_row_13 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[0][14:0], dividend[13]}),
-	.quotient	(~temp_remainder[0][15]),
+	.dividend	({temp_remainder[9][14:0], dividend[13]}),
+	.quotient	(~temp_remainder[9][15]),
 	.q_out		(quotient_out_w[13]),
 	.remainder	(reg_remainder_w[3])
 );
@@ -62,24 +64,24 @@ Divider_row Divider_row_12 (
 
 Divider_row Divider_row_11 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[2][14:0], dividend[11]}),
-	.quotient	(~temp_remainder[2][15]),
+	.dividend	({temp_remainder[8][14:0], dividend[11]}),
+	.quotient	(~temp_remainder[8][15]),
 	.q_out		(quotient_out_w[11]),
 	.remainder	(temp_remainder[7])
 );
 
 Divider_row Divider_row_10 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[1][14:0], dividend[10]}),
-	.quotient	(~temp_remainder[1][15]),
+	.dividend	({temp_remainder[7][14:0], dividend[10]}),
+	.quotient	(~temp_remainder[7][15]),
 	.q_out		(quotient_out_w[10]),
 	.remainder	(temp_remainder[6])
 );
 
 Divider_row Divider_row_9 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[0][14:0], dividend[9]}),
-	.quotient	(~temp_remainder[0][15]),
+	.dividend	({temp_remainder[6][14:0], dividend[9]}),
+	.quotient	(~temp_remainder[6][15]),
 	.q_out		(quotient_out_w[9]),
 	.remainder	(reg_remainder_w[2])
 );
@@ -96,24 +98,24 @@ Divider_row Divider_row_8 (
 
 Divider_row Divider_row_7 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[2][14:0], dividend[7]}),
-	.quotient	(~temp_remainder[2][15]),
+	.dividend	({temp_remainder[5][14:0], dividend[7]}),
+	.quotient	(~temp_remainder[5][15]),
 	.q_out		(quotient_out_w[7]),
 	.remainder	(temp_remainder[4])
 );
 
 Divider_row Divider_row_6 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[1][14:0], dividend[6]}),
+	.dividend	({temp_remainder[4][14:0], dividend[6]}),
+	.quotient	(~temp_remainder[4][15]),
 	.q_out		(quotient_out_w[6]),
-	.quotient	(~temp_remainder[1][15]),
 	.remainder	(temp_remainder[3])
 );
 
 Divider_row Divider_row_5 (
 	.divisor	(divisor),
-	.dividend	({temp_remainder[0][14:0], dividend[5]}),
-	.quotient	(~temp_remainder[0][15]),
+	.dividend	({temp_remainder[3][14:0], dividend[5]}),
+	.quotient	(~temp_remainder[3][15]),
 	.q_out		(quotient_out_w[5]),
 	.remainder	(reg_remainder_w[1])
 );
@@ -164,20 +166,30 @@ Divider_row Divider_row_0 (
 
 always @ ( posedge clk or posedge reset ) begin
 	if (reset == 1'b1) begin
-		reg_remainder[0] <= 0;
-		reg_remainder[1] <= 0;
-		reg_remainder[2] <= 0;
-		reg_remainder[3] <= 0;
-		quotient_out <= 0;
-		remainder <= 0;
+		v_out[0]			<= 0;
+		v_out[1]			<= 0;
+		v_out[2]			<= 0;
+		v_out[3]			<= 0;
+		valid_out			<= 0;
+		reg_remainder[0]	<= 0;
+		reg_remainder[1]	<= 0;
+		reg_remainder[2]	<= 0;
+		reg_remainder[3]	<= 0;
+		quotient_out		<= 0;
+		remainder			<= 0;
 	end
 	else begin
-		reg_remainder[0] <= reg_remainder_w[0];
-		reg_remainder[1] <= reg_remainder_w[1];
-		reg_remainder[2] <= reg_remainder_w[2];
-		reg_remainder[3] <= reg_remainder_w[3];
-		quotient_out <= quotient_out_w;
-		remainder <= remainder_w;
+		v_out[0]			<= valid_in;
+		v_out[1]			<= v_out[0];
+		v_out[2]			<= v_out[1];
+		v_out[3]			<= v_out[2];
+		valid_out			<= v_out[3];
+		reg_remainder[0]	<= reg_remainder_w[0];
+		reg_remainder[1]	<= reg_remainder_w[1];
+		reg_remainder[2]	<= reg_remainder_w[2];
+		reg_remainder[3]	<= reg_remainder_w[3];
+		quotient_out		<= quotient_out_w;
+		remainder			<= remainder_w;
 	end
 end
 

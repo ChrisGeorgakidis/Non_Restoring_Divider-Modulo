@@ -3,19 +3,18 @@ module Divider_tb ();
 reg clk, reset, valid_in, mode;
 reg [15:0]divisor;
 reg [31:0]dividend;
-wire busy, valid_out;
+wire valid_out;
 wire [31:0]result;
 
-FSM FSM(
+Divider_Modulo Divider_Modulo(
     .clk        (clk),
     .reset      (reset),
+	.mode       (mode),
     .valid_in   (valid_in),
-    .mode       (mode),
     .divisor    (divisor),
     .dividend   (dividend),
-    .busy       (busy),
-    .valid_out  (valid_out),
-    .result     (result)
+	.result     (result),
+	.valid_out  (valid_out)//
 );
 
 
@@ -23,11 +22,13 @@ FSM FSM(
 initial begin
     clk         <= 1'b1;
     reset       <= 1'b1;
-    valid_in    <= 1'b1;
-    mode        <= 0;
-    divisor     <= 16'd5;
-    dividend    <= 32'd17;
+    mode        <= 1'b0;
+	valid_in	<= 1'b0;
+    divisor     <= 16'b0110_0011_0000_0011;
+    dividend    <= 32'b0010_0000_0000_0100_0000_0000_1100_0000;
+	#5valid_in  <= 1'b1;
     #50 reset   <= 1'b0;
+	#10valid_in	<= 1'b0;
 end
 
 always begin
