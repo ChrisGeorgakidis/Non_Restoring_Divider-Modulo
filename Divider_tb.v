@@ -22,13 +22,30 @@ Divider_Modulo Divider_Modulo(
 initial begin
     clk         <= 1'b1;
     reset       <= 1'b1;
-    mode        <= 1'b0;
-	valid_in	<= 1'b0;
-    divisor     <= 16'b0110_0011_0000_0011;
-    dividend    <= 32'b0010_0000_0000_0100_0000_0000_1100_0000;
-	#5valid_in  <= 1'b1;
+    valid_in    <= 1'b0;
     #50 reset   <= 1'b0;
-	#10valid_in	<= 1'b0;
+
+    //Data 1
+    mode        <= 1'b0;
+	valid_in	<= 1'b1;
+    divisor     <= 16'b0110_0011_0000_0011; //25347
+    dividend    <= 32'b0010_0000_0000_0100_0000_0000_1100_0000; //537133248
+    //quotient  = 21191
+    //remainder = 4971
+    
+	#10mode     <= 1'b1;
+	valid_in	<= 1'b1;
+    divisor     <= 16'b0110_0011_0110_0011; //25443
+    dividend    <= 32'b0010_1001_0010_0100_1100_0100_1100_0011; //690275523
+    //quotient  = 27130
+    //remainder = 6933
+
+    #10mode     <= 1'b1;
+	valid_in	<= 1'b0;
+    divisor     <= 16'b0000_0000_0000_0011; //3
+    dividend    <= 32'b0010_0000_0000_0100_0000_0000_1100_0000; //537133248
+    //quotient  = 179044416
+    //remainder = 0
 end
 
 always begin
