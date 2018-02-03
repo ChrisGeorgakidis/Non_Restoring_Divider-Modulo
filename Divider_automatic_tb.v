@@ -38,10 +38,10 @@ initial begin
 	#50 reset	= 1'b0;
 
 	for (i = 0; i < 3; i = i + 1) begin
-		ValidIn[i]				=	$urandom%1;
-		Mode[i]					=	$urandom%1;
-		Divisor[i]				=	$random%4294967295;
-		Dividend[i]				=	$random%65535;
+		ValidIn[i]				=	1'b1; //$random%1;
+		Mode[i]					=	1'b1; //$random%1;
+		Divisor[i]				=	$random % 2147483647;
+		Dividend[i]				=	$random % 32767;
 		if (Mode[i] == 1'b0) begin
 			Expected_Result[i]	=	Dividend[i]/Divisor[i];
 		end
@@ -58,8 +58,8 @@ initial begin
 			dividend	=	Dividend[i];
 	end
 
-	$display("Errors = %d" errors);
-	#60 $finish;
+	$display("Errors = %d", errors);
+	#70 $finish;
 end
 
 always begin
@@ -71,7 +71,7 @@ end
 
 always @ (negedge clk) begin
 	case (counter)
-		5: begin
+		11: begin
 			if (result == Expected_Result[0] && valid_out == Expected_ValidOut[0]) begin
 				$display("Success: valid_in = %b, mode = %b, dividend = %d, divisor = %d	=>	result = %d, valid_out = %b", ValidIn[0], Mode[0], Dividend[0], Divisor[0], Expected_Result[0], Expected_ValidOut[0]);
 			end
@@ -80,7 +80,7 @@ always @ (negedge clk) begin
 				errors = errors + 1;
 			end
 		end
-		6: begin
+		12: begin
 			if (result == Expected_Result[1] && valid_out == Expected_ValidOut[1]) begin
 				$display("Success: valid_in = %b, mode = %b, dividend = %d, divisor = %d	=>	result = %d, valid_out = %b", ValidIn[1], Mode[1], Dividend[1], Divisor[1], Expected_Result[1], Expected_ValidOut[1]);
 			end
@@ -89,7 +89,7 @@ always @ (negedge clk) begin
 				errors = errors + 1;
 			end
 		end
-		7: begin
+		13: begin
 			if (result == Expected_Result[2] && valid_out == Expected_ValidOut[2]) begin
 				$display("Success: valid_in = %b, mode = %b, dividend = %d, divisor = %d	=>	result = %d, valid_out = %b", ValidIn[2], Mode[2], Dividend[2], Divisor[2], Expected_Result[2], Expected_ValidOut[2]);
 			end
@@ -100,8 +100,6 @@ always @ (negedge clk) begin
 		end
 		default:;
 	endcase
-end
-
 end
 
 endmodule

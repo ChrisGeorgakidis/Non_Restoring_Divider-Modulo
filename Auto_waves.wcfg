@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Giannis/UTH/4o etos/Digital Electronics/Divider/Sim_Files/Divider/Divider_automatic_tb_isim_beh1.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Divider_automatic_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/Divider_automatic_tb/valid_out" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">valid_out</obj_property>
+      <obj_property name="ObjectShortName">valid_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/valid_in" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">valid_in</obj_property>
+      <obj_property name="ObjectShortName">valid_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/mode" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/errors" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">errors[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/ValidIn" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ValidIn[2:0,0:0]</obj_property>
+      <obj_property name="ObjectShortName">ValidIn[2:0,0:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/Mode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Mode[2:0,0:0]</obj_property>
+      <obj_property name="ObjectShortName">Mode[2:0,0:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/Expected_ValidOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Expected_ValidOut[2:0,0:0]</obj_property>
+      <obj_property name="ObjectShortName">Expected_ValidOut[2:0,0:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/divisor" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">divisor[15:0]</obj_property>
+      <obj_property name="ObjectShortName">divisor[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/Divisor" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Divisor[2:0,15:0]</obj_property>
+      <obj_property name="ObjectShortName">Divisor[2:0,15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/dividend" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dividend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dividend[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/Dividend" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Dividend[2:0,31:0]</obj_property>
+      <obj_property name="ObjectShortName">Dividend[2:0,31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/counter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">counter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/Expected_Result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Expected_Result[2:0,31:0]</obj_property>
+      <obj_property name="ObjectShortName">Expected_Result[2:0,31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Divider_automatic_tb/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
