@@ -1,0 +1,831 @@
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 10 ns HIGH 50%;
+ For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+  3069017 paths analyzed, 552 endpoints analyzed, 0 failing endpoints
+  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+  Minimum period is   9.945ns.
+ --------------------------------------------------------------------------------
+
+ Paths for end point quotient_p<2>_5 (SLICE_X16Y35.A4), 86745 paths
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.055ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               remainder_p_2_15 (FF)
+   Destination:          quotient_p<2>_5 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.916ns (Levels of Logic = 15)
+   Clock Path Skew:      0.006ns (1.055 - 1.049)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: remainder_p_2_15 to quotient_p<2>_5
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X29Y21.DQ      Tcko                  0.375   remainder_p_2_15
+                                                        remainder_p_2_15
+     SLICE_X24Y24.C5      net (fanout=33)       0.845   remainder_p_2_15
+     SLICE_X24Y24.C       Tilo                  0.086   divisor_p_2_0_1
+                                                        Divider_row_8/cas_1/cout1
+     SLICE_X25Y26.A6      net (fanout=3)        0.390   Divider_row_8/cout<1>
+     SLICE_X25Y26.A       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_3/cout1
+     SLICE_X25Y26.B6      net (fanout=3)        0.127   Divider_row_8/cout<3>
+     SLICE_X25Y26.B       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_5/cout1
+     SLICE_X24Y27.A5      net (fanout=3)        0.345   Divider_row_8/cout<5>
+     SLICE_X24Y27.A       Tilo                  0.086   N179
+                                                        Divider_row_8/cas_7/cout1
+     SLICE_X25Y28.B1      net (fanout=3)        0.840   Divider_row_8/cout<7>
+     SLICE_X25Y28.B       Tilo                  0.086   N377
+                                                        Divider_row_8/cas_9/Mxor_remainder_xo<0>1
+     SLICE_X24Y27.C5      net (fanout=4)        0.334   temp_remainder<5><9>
+     SLICE_X24Y27.C       Tilo                  0.086   N179
+                                                        Divider_row_7/cas_9/cout1_SW1
+     SLICE_X23Y29.B4      net (fanout=2)        0.557   N263
+     SLICE_X23Y29.B       Tilo                  0.086   divisor_p_2_7
+                                                        Divider_row_7/cas_11/cout1_SW1
+     SLICE_X23Y29.A1      net (fanout=2)        0.861   N323
+     SLICE_X23Y29.A       Tilo                  0.086   divisor_p_2_7
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1_SW3
+     SLICE_X21Y31.A5      net (fanout=2)        0.445   N488
+     SLICE_X21Y31.A       Tilo                  0.086   N78
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X20Y33.C3      net (fanout=25)       0.716   temp_remainder<4><15>
+     SLICE_X20Y33.C       Tilo                  0.086   divisor_p_2_11
+                                                        Divider_row_6/cas_5/cout1
+     SLICE_X17Y33.C6      net (fanout=3)        0.406   Divider_row_6/cout<5>
+     SLICE_X17Y33.C       Tilo                  0.086   temp_remainder<3><7>
+                                                        Divider_row_6/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X18Y34.A3      net (fanout=5)        0.531   temp_remainder<3><7>
+     SLICE_X18Y34.A       Tilo                  0.086   N614
+                                                        Divider_row_5/cas_7/cout1_SW0
+     SLICE_X19Y34.C1      net (fanout=6)        0.617   N142
+     SLICE_X19Y34.C       Tilo                  0.086   N357
+                                                        Divider_row_5/cas_11/cout1_SW2
+     SLICE_X18Y35.C1      net (fanout=1)        0.861   N334
+     SLICE_X18Y35.C       Tilo                  0.086   remainder_p_1_15
+                                                        Divider_row_5/cas_13/cout1
+     SLICE_X16Y35.A4      net (fanout=2)        0.456   Divider_row_5/cout<13>
+     SLICE_X16Y35.CLK     Tas                   0.006   quotient_p<2><8>
+                                                        Divider_row_5/q_out1
+                                                        quotient_p<2>_5
+     -------------------------------------------------  ---------------------------
+     Total                                      9.916ns (1.585ns logic, 8.331ns route)
+                                                        (16.0% logic, 84.0% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.089ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               remainder_p_2_15 (FF)
+   Destination:          quotient_p<2>_5 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.882ns (Levels of Logic = 15)
+   Clock Path Skew:      0.006ns (1.055 - 1.049)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: remainder_p_2_15 to quotient_p<2>_5
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X29Y21.DQ      Tcko                  0.375   remainder_p_2_15
+                                                        remainder_p_2_15
+     SLICE_X24Y24.C5      net (fanout=33)       0.845   remainder_p_2_15
+     SLICE_X24Y24.C       Tilo                  0.086   divisor_p_2_0_1
+                                                        Divider_row_8/cas_1/cout1
+     SLICE_X25Y26.A6      net (fanout=3)        0.390   Divider_row_8/cout<1>
+     SLICE_X25Y26.A       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_3/cout1
+     SLICE_X25Y26.B6      net (fanout=3)        0.127   Divider_row_8/cout<3>
+     SLICE_X25Y26.B       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_5/cout1
+     SLICE_X24Y27.A5      net (fanout=3)        0.345   Divider_row_8/cout<5>
+     SLICE_X24Y27.A       Tilo                  0.086   N179
+                                                        Divider_row_8/cas_7/cout1
+     SLICE_X25Y28.B1      net (fanout=3)        0.840   Divider_row_8/cout<7>
+     SLICE_X25Y28.B       Tilo                  0.086   N377
+                                                        Divider_row_8/cas_9/Mxor_remainder_xo<0>1
+     SLICE_X22Y28.A4      net (fanout=4)        0.462   temp_remainder<5><9>
+     SLICE_X22Y28.A       Tilo                  0.086   N340
+                                                        Divider_row_7/cas_9/cout1_SW0
+     SLICE_X22Y29.B4      net (fanout=2)        0.464   N262
+     SLICE_X22Y29.B       Tilo                  0.086   N27
+                                                        Divider_row_7/cas_11/cout1_SW0
+     SLICE_X22Y29.A1      net (fanout=2)        0.871   N322
+     SLICE_X22Y29.A       Tilo                  0.086   N27
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1_SW2
+     SLICE_X21Y31.A6      net (fanout=2)        0.366   N487
+     SLICE_X21Y31.A       Tilo                  0.086   N78
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X20Y33.C3      net (fanout=25)       0.716   temp_remainder<4><15>
+     SLICE_X20Y33.C       Tilo                  0.086   divisor_p_2_11
+                                                        Divider_row_6/cas_5/cout1
+     SLICE_X17Y33.C6      net (fanout=3)        0.406   Divider_row_6/cout<5>
+     SLICE_X17Y33.C       Tilo                  0.086   temp_remainder<3><7>
+                                                        Divider_row_6/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X18Y34.A3      net (fanout=5)        0.531   temp_remainder<3><7>
+     SLICE_X18Y34.A       Tilo                  0.086   N614
+                                                        Divider_row_5/cas_7/cout1_SW0
+     SLICE_X19Y34.C1      net (fanout=6)        0.617   N142
+     SLICE_X19Y34.C       Tilo                  0.086   N357
+                                                        Divider_row_5/cas_11/cout1_SW2
+     SLICE_X18Y35.C1      net (fanout=1)        0.861   N334
+     SLICE_X18Y35.C       Tilo                  0.086   remainder_p_1_15
+                                                        Divider_row_5/cas_13/cout1
+     SLICE_X16Y35.A4      net (fanout=2)        0.456   Divider_row_5/cout<13>
+     SLICE_X16Y35.CLK     Tas                   0.006   quotient_p<2><8>
+                                                        Divider_row_5/q_out1
+                                                        quotient_p<2>_5
+     -------------------------------------------------  ---------------------------
+     Total                                      9.882ns (1.585ns logic, 8.297ns route)
+                                                        (16.0% logic, 84.0% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.095ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               remainder_p_2_1 (FF)
+   Destination:          quotient_p<2>_5 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.737ns (Levels of Logic = 14)
+   Clock Path Skew:      -0.133ns (1.055 - 1.188)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: remainder_p_2_1 to quotient_p<2>_5
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X25Y19.BQ      Tcko                  0.375   remainder_p_2_3
+                                                        remainder_p_2_1
+     SLICE_X25Y26.A1      net (fanout=3)        1.142   remainder_p_2_1
+     SLICE_X25Y26.A       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_3/cout1
+     SLICE_X25Y26.B6      net (fanout=3)        0.127   Divider_row_8/cout<3>
+     SLICE_X25Y26.B       Tilo                  0.086   N87
+                                                        Divider_row_8/cas_5/cout1
+     SLICE_X24Y27.A5      net (fanout=3)        0.345   Divider_row_8/cout<5>
+     SLICE_X24Y27.A       Tilo                  0.086   N179
+                                                        Divider_row_8/cas_7/cout1
+     SLICE_X25Y28.B1      net (fanout=3)        0.840   Divider_row_8/cout<7>
+     SLICE_X25Y28.B       Tilo                  0.086   N377
+                                                        Divider_row_8/cas_9/Mxor_remainder_xo<0>1
+     SLICE_X24Y27.C5      net (fanout=4)        0.334   temp_remainder<5><9>
+     SLICE_X24Y27.C       Tilo                  0.086   N179
+                                                        Divider_row_7/cas_9/cout1_SW1
+     SLICE_X23Y29.B4      net (fanout=2)        0.557   N263
+     SLICE_X23Y29.B       Tilo                  0.086   divisor_p_2_7
+                                                        Divider_row_7/cas_11/cout1_SW1
+     SLICE_X23Y29.A1      net (fanout=2)        0.861   N323
+     SLICE_X23Y29.A       Tilo                  0.086   divisor_p_2_7
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1_SW3
+     SLICE_X21Y31.A5      net (fanout=2)        0.445   N488
+     SLICE_X21Y31.A       Tilo                  0.086   N78
+                                                        Divider_row_7/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X20Y33.C3      net (fanout=25)       0.716   temp_remainder<4><15>
+     SLICE_X20Y33.C       Tilo                  0.086   divisor_p_2_11
+                                                        Divider_row_6/cas_5/cout1
+     SLICE_X17Y33.C6      net (fanout=3)        0.406   Divider_row_6/cout<5>
+     SLICE_X17Y33.C       Tilo                  0.086   temp_remainder<3><7>
+                                                        Divider_row_6/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X18Y34.A3      net (fanout=5)        0.531   temp_remainder<3><7>
+     SLICE_X18Y34.A       Tilo                  0.086   N614
+                                                        Divider_row_5/cas_7/cout1_SW0
+     SLICE_X19Y34.C1      net (fanout=6)        0.617   N142
+     SLICE_X19Y34.C       Tilo                  0.086   N357
+                                                        Divider_row_5/cas_11/cout1_SW2
+     SLICE_X18Y35.C1      net (fanout=1)        0.861   N334
+     SLICE_X18Y35.C       Tilo                  0.086   remainder_p_1_15
+                                                        Divider_row_5/cas_13/cout1
+     SLICE_X16Y35.A4      net (fanout=2)        0.456   Divider_row_5/cout<13>
+     SLICE_X16Y35.CLK     Tas                   0.006   quotient_p<2><8>
+                                                        Divider_row_5/q_out1
+                                                        quotient_p<2>_5
+     -------------------------------------------------  ---------------------------
+     Total                                      9.737ns (1.499ns logic, 8.238ns route)
+                                                        (15.4% logic, 84.6% route)
+
+ --------------------------------------------------------------------------------
+
+ Paths for end point remainder_p_2_13 (SLICE_X31Y21.C6), 23519 paths
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.099ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               dividend_p_1_12 (FF)
+   Destination:          remainder_p_2_13 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.680ns (Levels of Logic = 16)
+   Clock Path Skew:      -0.186ns (0.978 - 1.164)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: dividend_p_1_12 to remainder_p_2_13
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X24Y11.DQ      Tcko                  0.396   dividend_p_1_12
+                                                        dividend_p_1_12
+     SLICE_X27Y10.C3      net (fanout=11)       0.533   dividend_p_1_12
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X28Y11.B6      net (fanout=3)        0.147   Divider_row_12/cout<3>
+     SLICE_X28Y11.B       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_5/cout1
+     SLICE_X28Y12.C6      net (fanout=3)        0.370   Divider_row_12/cout<5>
+     SLICE_X28Y12.C       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_12/cas_7/cout1
+     SLICE_X28Y12.D5      net (fanout=3)        0.231   Divider_row_12/cout<7>
+     SLICE_X28Y12.D       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_12/cas_9/cout1
+     SLICE_X28Y13.A6      net (fanout=3)        0.249   Divider_row_12/cout<9>
+     SLICE_X28Y13.A       Tilo                  0.086   N32
+                                                        Divider_row_12/cas_11/cout1
+     SLICE_X28Y13.B6      net (fanout=3)        0.144   Divider_row_12/cout<11>
+     SLICE_X28Y13.B       Tilo                  0.086   N32
+                                                        Divider_row_12/cas_13/cout1
+     SLICE_X27Y15.B6      net (fanout=12)       0.947   Divider_row_12/cout<13>
+     SLICE_X27Y15.B       Tilo                  0.086   temp_remainder<6><1>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW1
+     SLICE_X26Y15.A1      net (fanout=3)        0.753   N242
+     SLICE_X26Y15.A       Tilo                  0.086   N515
+                                                        Divider_row_10/cas_1/Mxor_remainder_xo<0>1_SW3
+     SLICE_X29Y15.C2      net (fanout=1)        0.941   N515
+     SLICE_X29Y15.C       Tilo                  0.086   N160
+                                                        Divider_row_9/cas_1/cout1_SW1
+     SLICE_X29Y18.B1      net (fanout=3)        0.840   N15
+     SLICE_X29Y18.B       Tilo                  0.086   N69
+                                                        Divider_row_9/cas_3/cout1_SW1
+     SLICE_X31Y18.B4      net (fanout=3)        0.437   N69
+     SLICE_X31Y18.B       Tilo                  0.086   Divider_row_10/cout<11>
+                                                        Divider_row_9/cas_5/cout1_SW1
+     SLICE_X31Y18.A5      net (fanout=3)        0.188   N99
+     SLICE_X31Y18.A       Tilo                  0.086   Divider_row_10/cout<11>
+                                                        Divider_row_9/cas_7/cout1_SW1
+     SLICE_X29Y20.A4      net (fanout=6)        0.698   N140
+     SLICE_X29Y20.A       Tilo                  0.086   temp_remainder<6><14>
+                                                        Divider_row_9/cas_9/cout1_SW1
+     SLICE_X31Y21.D2      net (fanout=2)        0.638   N284
+     SLICE_X31Y21.D       Tilo                  0.086   remainder_p_2_13
+                                                        Divider_row_9/cas_11/cout1_SW5
+     SLICE_X31Y21.C6      net (fanout=1)        0.119   N575
+     SLICE_X31Y21.CLK     Tas                   0.030   remainder_p_2_13
+                                                        Divider_row_9/cas_13/Mxor_remainder_xo<0>1
+                                                        remainder_p_2_13
+     -------------------------------------------------  ---------------------------
+     Total                                      9.680ns (1.716ns logic, 7.964ns route)
+                                                        (17.7% logic, 82.3% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.100ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               remainder_p_3_15_1 (FF)
+   Destination:          remainder_p_2_13 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.673ns (Levels of Logic = 16)
+   Clock Path Skew:      -0.192ns (0.978 - 1.170)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: remainder_p_3_15_1 to remainder_p_2_13
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X23Y8.BQ       Tcko                  0.375   remainder_p_3_15_1
+                                                        remainder_p_3_15_1
+     SLICE_X27Y10.C6      net (fanout=2)        0.547   remainder_p_3_15_1
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X28Y11.B6      net (fanout=3)        0.147   Divider_row_12/cout<3>
+     SLICE_X28Y11.B       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_5/cout1
+     SLICE_X28Y12.C6      net (fanout=3)        0.370   Divider_row_12/cout<5>
+     SLICE_X28Y12.C       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_12/cas_7/cout1
+     SLICE_X28Y12.D5      net (fanout=3)        0.231   Divider_row_12/cout<7>
+     SLICE_X28Y12.D       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_12/cas_9/cout1
+     SLICE_X28Y13.A6      net (fanout=3)        0.249   Divider_row_12/cout<9>
+     SLICE_X28Y13.A       Tilo                  0.086   N32
+                                                        Divider_row_12/cas_11/cout1
+     SLICE_X28Y13.B6      net (fanout=3)        0.144   Divider_row_12/cout<11>
+     SLICE_X28Y13.B       Tilo                  0.086   N32
+                                                        Divider_row_12/cas_13/cout1
+     SLICE_X27Y15.B6      net (fanout=12)       0.947   Divider_row_12/cout<13>
+     SLICE_X27Y15.B       Tilo                  0.086   temp_remainder<6><1>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW1
+     SLICE_X26Y15.A1      net (fanout=3)        0.753   N242
+     SLICE_X26Y15.A       Tilo                  0.086   N515
+                                                        Divider_row_10/cas_1/Mxor_remainder_xo<0>1_SW3
+     SLICE_X29Y15.C2      net (fanout=1)        0.941   N515
+     SLICE_X29Y15.C       Tilo                  0.086   N160
+                                                        Divider_row_9/cas_1/cout1_SW1
+     SLICE_X29Y18.B1      net (fanout=3)        0.840   N15
+     SLICE_X29Y18.B       Tilo                  0.086   N69
+                                                        Divider_row_9/cas_3/cout1_SW1
+     SLICE_X31Y18.B4      net (fanout=3)        0.437   N69
+     SLICE_X31Y18.B       Tilo                  0.086   Divider_row_10/cout<11>
+                                                        Divider_row_9/cas_5/cout1_SW1
+     SLICE_X31Y18.A5      net (fanout=3)        0.188   N99
+     SLICE_X31Y18.A       Tilo                  0.086   Divider_row_10/cout<11>
+                                                        Divider_row_9/cas_7/cout1_SW1
+     SLICE_X29Y20.A4      net (fanout=6)        0.698   N140
+     SLICE_X29Y20.A       Tilo                  0.086   temp_remainder<6><14>
+                                                        Divider_row_9/cas_9/cout1_SW1
+     SLICE_X31Y21.D2      net (fanout=2)        0.638   N284
+     SLICE_X31Y21.D       Tilo                  0.086   remainder_p_2_13
+                                                        Divider_row_9/cas_11/cout1_SW5
+     SLICE_X31Y21.C6      net (fanout=1)        0.119   N575
+     SLICE_X31Y21.CLK     Tas                   0.030   remainder_p_2_13
+                                                        Divider_row_9/cas_13/Mxor_remainder_xo<0>1
+                                                        remainder_p_2_13
+     -------------------------------------------------  ---------------------------
+     Total                                      9.673ns (1.695ns logic, 7.978ns route)
+                                                        (17.5% logic, 82.5% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.101ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               dividend_p_1_12 (FF)
+   Destination:          remainder_p_2_13 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.678ns (Levels of Logic = 15)
+   Clock Path Skew:      -0.186ns (0.978 - 1.164)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: dividend_p_1_12 to remainder_p_2_13
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X24Y11.DQ      Tcko                  0.396   dividend_p_1_12
+                                                        dividend_p_1_12
+     SLICE_X27Y10.C3      net (fanout=11)       0.533   dividend_p_1_12
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X29Y10.A2      net (fanout=3)        0.640   Divider_row_12/cout<3>
+     SLICE_X29Y10.A       Tilo                  0.086   N314
+                                                        Divider_row_12/cas_4/Mxor_remainder_xo<0>1
+     SLICE_X29Y11.D4      net (fanout=7)        0.582   temp_remainder<8><4>
+     SLICE_X29Y11.D       Tilo                  0.086   N128
+                                                        Divider_row_11/cas_5/cout1_SW0
+     SLICE_X29Y12.B6      net (fanout=2)        0.246   N128
+     SLICE_X29Y12.B       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_7/cout1_SW0
+     SLICE_X29Y12.A5      net (fanout=2)        0.196   N184
+     SLICE_X29Y12.A       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_9/cout1_SW0
+     SLICE_X28Y14.B3      net (fanout=2)        0.517   N268
+     SLICE_X28Y14.B       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_11/cout1_SW0
+     SLICE_X28Y14.A5      net (fanout=2)        0.216   N328
+     SLICE_X28Y14.A       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW2
+     SLICE_X28Y16.A5      net (fanout=2)        0.714   N493
+     SLICE_X28Y16.A       Tilo                  0.086   temp_remainder<6><3>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X30Y17.C5      net (fanout=25)       0.479   temp_remainder<7><15>
+     SLICE_X30Y17.C       Tilo                  0.086   temp_remainder<6><6>
+                                                        Divider_row_10/cas_5/cout1
+     SLICE_X30Y18.B1      net (fanout=3)        1.035   Divider_row_10/cout<5>
+     SLICE_X30Y18.B       Tilo                  0.086   N98
+                                                        Divider_row_10/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X31Y18.A1      net (fanout=5)        0.706   temp_remainder<6><7>
+     SLICE_X31Y18.A       Tilo                  0.086   Divider_row_10/cout<11>
+                                                        Divider_row_9/cas_7/cout1_SW1
+     SLICE_X29Y20.A4      net (fanout=6)        0.698   N140
+     SLICE_X29Y20.A       Tilo                  0.086   temp_remainder<6><14>
+                                                        Divider_row_9/cas_9/cout1_SW1
+     SLICE_X31Y21.D2      net (fanout=2)        0.638   N284
+     SLICE_X31Y21.D       Tilo                  0.086   remainder_p_2_13
+                                                        Divider_row_9/cas_11/cout1_SW5
+     SLICE_X31Y21.C6      net (fanout=1)        0.119   N575
+     SLICE_X31Y21.CLK     Tas                   0.030   remainder_p_2_13
+                                                        Divider_row_9/cas_13/Mxor_remainder_xo<0>1
+                                                        remainder_p_2_13
+     -------------------------------------------------  ---------------------------
+     Total                                      9.678ns (1.630ns logic, 8.048ns route)
+                                                        (16.8% logic, 83.2% route)
+
+ --------------------------------------------------------------------------------
+
+ Paths for end point quotient_p<1>_9 (SLICE_X28Y21.A3), 86745 paths
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.115ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               dividend_p_1_12 (FF)
+   Destination:          quotient_p<1>_9 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.662ns (Levels of Logic = 15)
+   Clock Path Skew:      -0.188ns (0.976 - 1.164)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: dividend_p_1_12 to quotient_p<1>_9
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X24Y11.DQ      Tcko                  0.396   dividend_p_1_12
+                                                        dividend_p_1_12
+     SLICE_X27Y10.C3      net (fanout=11)       0.533   dividend_p_1_12
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X29Y10.A2      net (fanout=3)        0.640   Divider_row_12/cout<3>
+     SLICE_X29Y10.A       Tilo                  0.086   N314
+                                                        Divider_row_12/cas_4/Mxor_remainder_xo<0>1
+     SLICE_X29Y11.D4      net (fanout=7)        0.582   temp_remainder<8><4>
+     SLICE_X29Y11.D       Tilo                  0.086   N128
+                                                        Divider_row_11/cas_5/cout1_SW0
+     SLICE_X29Y12.B6      net (fanout=2)        0.246   N128
+     SLICE_X29Y12.B       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_7/cout1_SW0
+     SLICE_X29Y12.A5      net (fanout=2)        0.196   N184
+     SLICE_X29Y12.A       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_9/cout1_SW0
+     SLICE_X28Y14.B3      net (fanout=2)        0.517   N268
+     SLICE_X28Y14.B       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_11/cout1_SW0
+     SLICE_X28Y14.A5      net (fanout=2)        0.216   N328
+     SLICE_X28Y14.A       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW2
+     SLICE_X28Y16.A5      net (fanout=2)        0.714   N493
+     SLICE_X28Y16.A       Tilo                  0.086   temp_remainder<6><3>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X30Y17.C5      net (fanout=25)       0.479   temp_remainder<7><15>
+     SLICE_X30Y17.C       Tilo                  0.086   temp_remainder<6><6>
+                                                        Divider_row_10/cas_5/cout1
+     SLICE_X30Y18.B1      net (fanout=3)        1.035   Divider_row_10/cout<5>
+     SLICE_X30Y18.B       Tilo                  0.086   N98
+                                                        Divider_row_10/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X30Y18.C3      net (fanout=5)        0.395   temp_remainder<6><7>
+     SLICE_X30Y18.C       Tilo                  0.086   N98
+                                                        Divider_row_9/cas_7/cout1_SW0
+     SLICE_X30Y19.C3      net (fanout=6)        0.638   N139
+     SLICE_X30Y19.C       Tilo                  0.086   N351
+                                                        Divider_row_9/cas_11/cout1_SW2
+     SLICE_X29Y21.C2      net (fanout=1)        0.747   N331
+     SLICE_X29Y21.C       Tilo                  0.086   remainder_p_2_15
+                                                        Divider_row_9/cas_13/cout1
+     SLICE_X28Y21.A3      net (fanout=2)        0.389   Divider_row_9/cout<13>
+     SLICE_X28Y21.CLK     Tas                   0.006   quotient_p<1><12>
+                                                        Divider_row_9/q_out1
+                                                        quotient_p<1>_9
+     -------------------------------------------------  ---------------------------
+     Total                                      9.662ns (1.606ns logic, 8.056ns route)
+                                                        (16.6% logic, 83.4% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.116ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               remainder_p_3_15_1 (FF)
+   Destination:          quotient_p<1>_9 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.655ns (Levels of Logic = 15)
+   Clock Path Skew:      -0.194ns (0.976 - 1.170)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: remainder_p_3_15_1 to quotient_p<1>_9
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X23Y8.BQ       Tcko                  0.375   remainder_p_3_15_1
+                                                        remainder_p_3_15_1
+     SLICE_X27Y10.C6      net (fanout=2)        0.547   remainder_p_3_15_1
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X29Y10.A2      net (fanout=3)        0.640   Divider_row_12/cout<3>
+     SLICE_X29Y10.A       Tilo                  0.086   N314
+                                                        Divider_row_12/cas_4/Mxor_remainder_xo<0>1
+     SLICE_X29Y11.D4      net (fanout=7)        0.582   temp_remainder<8><4>
+     SLICE_X29Y11.D       Tilo                  0.086   N128
+                                                        Divider_row_11/cas_5/cout1_SW0
+     SLICE_X29Y12.B6      net (fanout=2)        0.246   N128
+     SLICE_X29Y12.B       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_7/cout1_SW0
+     SLICE_X29Y12.A5      net (fanout=2)        0.196   N184
+     SLICE_X29Y12.A       Tilo                  0.086   temp_remainder<8><8>
+                                                        Divider_row_11/cas_9/cout1_SW0
+     SLICE_X28Y14.B3      net (fanout=2)        0.517   N268
+     SLICE_X28Y14.B       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_11/cout1_SW0
+     SLICE_X28Y14.A5      net (fanout=2)        0.216   N328
+     SLICE_X28Y14.A       Tilo                  0.086   temp_remainder<8><11>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW2
+     SLICE_X28Y16.A5      net (fanout=2)        0.714   N493
+     SLICE_X28Y16.A       Tilo                  0.086   temp_remainder<6><3>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X30Y17.C5      net (fanout=25)       0.479   temp_remainder<7><15>
+     SLICE_X30Y17.C       Tilo                  0.086   temp_remainder<6><6>
+                                                        Divider_row_10/cas_5/cout1
+     SLICE_X30Y18.B1      net (fanout=3)        1.035   Divider_row_10/cout<5>
+     SLICE_X30Y18.B       Tilo                  0.086   N98
+                                                        Divider_row_10/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X30Y18.C3      net (fanout=5)        0.395   temp_remainder<6><7>
+     SLICE_X30Y18.C       Tilo                  0.086   N98
+                                                        Divider_row_9/cas_7/cout1_SW0
+     SLICE_X30Y19.C3      net (fanout=6)        0.638   N139
+     SLICE_X30Y19.C       Tilo                  0.086   N351
+                                                        Divider_row_9/cas_11/cout1_SW2
+     SLICE_X29Y21.C2      net (fanout=1)        0.747   N331
+     SLICE_X29Y21.C       Tilo                  0.086   remainder_p_2_15
+                                                        Divider_row_9/cas_13/cout1
+     SLICE_X28Y21.A3      net (fanout=2)        0.389   Divider_row_9/cout<13>
+     SLICE_X28Y21.CLK     Tas                   0.006   quotient_p<1><12>
+                                                        Divider_row_9/q_out1
+                                                        quotient_p<1>_9
+     -------------------------------------------------  ---------------------------
+     Total                                      9.655ns (1.585ns logic, 8.070ns route)
+                                                        (16.4% logic, 83.6% route)
+
+ --------------------------------------------------------------------------------
+ Slack (setup path):     0.126ns (requirement - (data path - clock path skew + uncertainty))
+   Source:               dividend_p_1_12 (FF)
+   Destination:          quotient_p<1>_9 (FF)
+   Requirement:          10.000ns
+   Data Path Delay:      9.651ns (Levels of Logic = 15)
+   Clock Path Skew:      -0.188ns (0.976 - 1.164)
+   Source Clock:         clk_BUFGP rising at 0.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.035ns
+
+   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+     Total System Jitter (TSJ):  0.070ns
+     Total Input Jitter (TIJ):   0.000ns
+     Discrete Jitter (DJ):       0.000ns
+     Phase Error (PE):           0.000ns
+
+   Maximum Data Path: dividend_p_1_12 to quotient_p<1>_9
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X24Y11.DQ      Tcko                  0.396   dividend_p_1_12
+                                                        dividend_p_1_12
+     SLICE_X27Y10.C3      net (fanout=11)       0.533   dividend_p_1_12
+     SLICE_X27Y10.C       Tilo                  0.086   N45
+                                                        Divider_row_12/cas_1/cout1
+     SLICE_X28Y11.A6      net (fanout=3)        0.729   Divider_row_12/cout<1>
+     SLICE_X28Y11.A       Tilo                  0.086   temp_remainder<8><7>
+                                                        Divider_row_12/cas_3/cout1
+     SLICE_X29Y10.A2      net (fanout=3)        0.640   Divider_row_12/cout<3>
+     SLICE_X29Y10.A       Tilo                  0.086   N314
+                                                        Divider_row_12/cas_4/Mxor_remainder_xo<0>1
+     SLICE_X28Y10.C1      net (fanout=7)        0.620   temp_remainder<8><4>
+     SLICE_X28Y10.C       Tilo                  0.086   N93
+                                                        Divider_row_11/cas_5/cout1_SW1
+     SLICE_X28Y12.B4      net (fanout=2)        0.459   N129
+     SLICE_X28Y12.B       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_11/cas_7/cout1_SW1
+     SLICE_X28Y12.A5      net (fanout=2)        0.216   N185
+     SLICE_X28Y12.A       Tilo                  0.086   Divider_row_12/cout<9>
+                                                        Divider_row_11/cas_9/cout1_SW1
+     SLICE_X29Y14.B4      net (fanout=2)        0.444   N269
+     SLICE_X29Y14.B       Tilo                  0.086   temp_remainder<8><15>
+                                                        Divider_row_11/cas_11/cout1_SW1
+     SLICE_X29Y14.A5      net (fanout=2)        0.198   N329
+     SLICE_X29Y14.A       Tilo                  0.086   temp_remainder<8><15>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1_SW3
+     SLICE_X28Y16.A3      net (fanout=2)        0.523   N494
+     SLICE_X28Y16.A       Tilo                  0.086   temp_remainder<6><3>
+                                                        Divider_row_11/cas_15/Mxor_remainder_xo<0>1
+     SLICE_X30Y17.C5      net (fanout=25)       0.479   temp_remainder<7><15>
+     SLICE_X30Y17.C       Tilo                  0.086   temp_remainder<6><6>
+                                                        Divider_row_10/cas_5/cout1
+     SLICE_X30Y18.B1      net (fanout=3)        1.035   Divider_row_10/cout<5>
+     SLICE_X30Y18.B       Tilo                  0.086   N98
+                                                        Divider_row_10/cas_7/Mxor_remainder_xo<0>1
+     SLICE_X30Y18.C3      net (fanout=5)        0.395   temp_remainder<6><7>
+     SLICE_X30Y18.C       Tilo                  0.086   N98
+                                                        Divider_row_9/cas_7/cout1_SW0
+     SLICE_X30Y19.C3      net (fanout=6)        0.638   N139
+     SLICE_X30Y19.C       Tilo                  0.086   N351
+                                                        Divider_row_9/cas_11/cout1_SW2
+     SLICE_X29Y21.C2      net (fanout=1)        0.747   N331
+     SLICE_X29Y21.C       Tilo                  0.086   remainder_p_2_15
+                                                        Divider_row_9/cas_13/cout1
+     SLICE_X28Y21.A3      net (fanout=2)        0.389   Divider_row_9/cout<13>
+     SLICE_X28Y21.CLK     Tas                   0.006   quotient_p<1><12>
+                                                        Divider_row_9/q_out1
+                                                        quotient_p<1>_9
+     -------------------------------------------------  ---------------------------
+     Total                                      9.651ns (1.606ns logic, 8.045ns route)
+                                                        (16.6% logic, 83.4% route)
+
+ --------------------------------------------------------------------------------
+
+ Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 10 ns HIGH 50%;
+ --------------------------------------------------------------------------------
+
+ Paths for end point reset_IBUF_shift2 (SLICE_X15Y39.BX), 1 path
+ --------------------------------------------------------------------------------
+ Slack (hold path):      0.397ns (requirement - (clock path skew + uncertainty - data path))
+   Source:               reset_IBUF_shift1 (FF)
+   Destination:          reset_IBUF_shift2 (FF)
+   Requirement:          0.000ns
+   Data Path Delay:      0.397ns (Levels of Logic = 0)
+   Clock Path Skew:      0.000ns
+   Source Clock:         clk_BUFGP rising at 10.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.000ns
+
+   Minimum Data Path: reset_IBUF_shift1 to reset_IBUF_shift2
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X15Y39.AQ      Tcko                  0.345   reset_IBUF_shift4
+                                                        reset_IBUF_shift1
+     SLICE_X15Y39.BX      net (fanout=1)        0.245   reset_IBUF_shift1
+     SLICE_X15Y39.CLK     Tckdi       (-Th)     0.193   reset_IBUF_shift4
+                                                        reset_IBUF_shift2
+     -------------------------------------------------  ---------------------------
+     Total                                      0.397ns (0.152ns logic, 0.245ns route)
+                                                        (38.3% logic, 61.7% route)
+
+ --------------------------------------------------------------------------------
+
+ Paths for end point reset_IBUF_shift4 (SLICE_X15Y39.DX), 1 path
+ --------------------------------------------------------------------------------
+ Slack (hold path):      0.422ns (requirement - (clock path skew + uncertainty - data path))
+   Source:               reset_IBUF_shift3 (FF)
+   Destination:          reset_IBUF_shift4 (FF)
+   Requirement:          0.000ns
+   Data Path Delay:      0.422ns (Levels of Logic = 0)
+   Clock Path Skew:      0.000ns
+   Source Clock:         clk_BUFGP rising at 10.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.000ns
+
+   Minimum Data Path: reset_IBUF_shift3 to reset_IBUF_shift4
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X15Y39.CQ      Tcko                  0.345   reset_IBUF_shift4
+                                                        reset_IBUF_shift3
+     SLICE_X15Y39.DX      net (fanout=6)        0.261   reset_IBUF_shift3
+     SLICE_X15Y39.CLK     Tckdi       (-Th)     0.184   reset_IBUF_shift4
+                                                        reset_IBUF_shift4
+     -------------------------------------------------  ---------------------------
+     Total                                      0.422ns (0.161ns logic, 0.261ns route)
+                                                        (38.2% logic, 61.8% route)
+
+ --------------------------------------------------------------------------------
+
+ Paths for end point valid_out_OBUF2 (SLICE_X24Y25.C5), 1 path
+ --------------------------------------------------------------------------------
+ Slack (hold path):      0.490ns (requirement - (clock path skew + uncertainty - data path))
+   Source:               valid_out_OBUF1 (FF)
+   Destination:          valid_out_OBUF2 (FF)
+   Requirement:          0.000ns
+   Data Path Delay:      0.494ns (Levels of Logic = 1)
+   Clock Path Skew:      0.004ns (0.127 - 0.123)
+   Source Clock:         clk_BUFGP rising at 10.000ns
+   Destination Clock:    clk_BUFGP rising at 10.000ns
+   Clock Uncertainty:    0.000ns
+
+   Minimum Data Path: valid_out_OBUF1 to valid_out_OBUF2
+     Location             Delay type         Delay(ns)  Physical Resource
+                                                        Logical Resource(s)
+     -------------------------------------------------  -------------------
+     SLICE_X24Y23.AQ      Tcko                  0.364   valid_out_OBUF1
+                                                        valid_out_OBUF1
+     SLICE_X24Y25.C5      net (fanout=1)        0.308   valid_out_OBUF1
+     SLICE_X24Y25.CLK     Tah         (-Th)     0.178   valid_out_OBUF2
+                                                        valid_out_OBUF11
+                                                        valid_out_OBUF2
+     -------------------------------------------------  ---------------------------
+     Total                                      0.494ns (0.186ns logic, 0.308ns route)
+                                                        (37.7% logic, 62.3% route)
+
+ --------------------------------------------------------------------------------
+
+ Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 10 ns HIGH 50%;
+ --------------------------------------------------------------------------------
+ Slack: 8.502ns (period - min period limit)
+   Period: 10.000ns
+   Min period limit: 1.498ns (667.557MHz) (Tbgper_I)
+   Physical resource: clk_BUFGP/BUFG/I0
+   Logical resource: clk_BUFGP/BUFG/I0
+   Location pin: BUFGCTRL_X0Y0.I0
+   Clock network: clk_BUFGP/IBUFG
+ --------------------------------------------------------------------------------
+ Slack: 8.600ns (period - (min low pulse limit / (low pulse / period)))
+   Period: 10.000ns
+   Low pulse: 5.000ns
+   Low pulse limit: 0.700ns (Twpl)
+   Physical resource: mode_p_31/CLK
+   Logical resource: Mshreg_mode_p_3/CLK
+   Location pin: SLICE_X0Y34.CLK
+   Clock network: clk_BUFGP
+ --------------------------------------------------------------------------------
+ Slack: 8.600ns (period - (min high pulse limit / (high pulse / period)))
+   Period: 10.000ns
+   High pulse: 5.000ns
+   High pulse limit: 0.700ns (Twph)
+   Physical resource: mode_p_31/CLK
+   Logical resource: Mshreg_mode_p_3/CLK
+   Location pin: SLICE_X0Y34.CLK
+   Clock network: clk_BUFGP
+ --------------------------------------------------------------------------------
+
+
+ All constraints were met.
+
+
+ Data Sheet report:
+ -----------------
+ All values displayed in nanoseconds (ns)
+
+ Clock to Setup on destination clock clk
+ ---------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+ ---------------+---------+---------+---------+---------+
+ clk            |    9.945|         |         |         |
+ ---------------+---------+---------+---------+---------+
+
+
+ Timing summary:
+ ---------------
+
+ Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+ Constraints cover 3069017 paths, 0 nets, and 3976 connections
+
+ Design statistics:
+    Minimum period:   9.945ns{1}   (Maximum frequency: 100.553MHz)
+
+
+ ------------------------------------Footnotes-----------------------------------
+ 1)  The minimum period statistic assumes all single cycle delays.
+
+ Analysis completed Tue Feb 06 10:38:32 2018
+ --------------------------------------------------------------------------------
+
+ Trace Settings:
+ -------------------------
+ Trace Settings
+
+ Peak Memory Usage: 376 MB
+
+  
