@@ -38,10 +38,16 @@ initial begin
 	#50 reset	= 1'b0;
 
 	for (i = 0; i < 3; i = i + 1) begin
-		ValidIn[i]				=	1'b1; //$random%1;
-		Mode[i]					=	1'b1; //$random%1;
+		ValidIn[i]				=	$random%1;
+		Mode[i]					=	$random%1;
 		Divisor[i]				=	$random % 2147483647;
 		Dividend[i]				=	$random % 32767;
+		while (Divisor[i] < 0) begin
+			Divisor[i]				=	$random % 2147483647;
+		end
+		while (Dividend[i] < 0) begin
+			Dividend[i]				=	$random % 32767;
+		end
 		if (Mode[i] == 1'b0) begin
 			Expected_Result[i]	=	Dividend[i]/Divisor[i];
 		end
